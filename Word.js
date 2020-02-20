@@ -1,20 +1,22 @@
 "use strict";
 var fs = require("fs");
 var Letter = require("./Letter");
+var currentWord = "banana";
+var guessedLetter = "a";
 
-// var word = "banana";
-// var guessedLetter = process.argv[2];
-
-function Word(word) {
-    var characters = word.split("");
+function Word(currentWord) {
+    var characters = currentWord.split("");
+    // this.guessLetter = function (guessedLetter) {letter.check(guessedLetter)};
+    
    var map = characters.map(function(character, index) {
-    var letter = new Letter(character);
-    // this.char = function(char) {letter.check(char)};
-    return letter.display(character);
+    var letter = new Letter();
+     letter.check(guessedLetter, character);
+     console.log(guessedLetter, character);
+    letter.display(letter.guess, character);
+     console.log({Key:index, value:character});
     //   console.log("Display: " + letter.display(character));
-    //    console.log({Key:index, value:character});
     });
     
 }
-
+Word(currentWord);
 module.exports = Word;

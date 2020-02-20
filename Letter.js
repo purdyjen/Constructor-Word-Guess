@@ -1,21 +1,22 @@
 "use strict";
 // var guessedLetter = "a";
-var Letter = function (character) {
-    this.character = character;
+var Letter = function () {
+    // this.character = character;
+    // var guess = this.guess;
     this.guess = false;
-    this.check = function(char) {
-        if (char === character) {
+    this.check = function(guessedLetter, character) {
+        if (guessedLetter == character) {
             this.guess = true;
             console.log("True");
-            return true;
+            return this.guess;
         } else {
-            console.log(char, character);
+            console.log(guessedLetter, character);
         }
     }
 }
 
-Letter.prototype.display = function(character) {
-    if (this.guess === false) {
+Letter.prototype.display = function(guess, character) {
+    if (guess == false) {
         return "_"
     } else {
         return character;
