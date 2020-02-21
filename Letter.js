@@ -1,8 +1,8 @@
 "use strict";
 // var guessedLetter = "a";
-var Letter = function () {
-    // this.character = character;
-    // var guess = this.guess;
+var Letter = function (currentWord) {
+    var characters = currentWord.split("");
+    console.log(characters);
     this.guess = false;
     this.check = function(guessedLetter, character) {
         if (guessedLetter == character) {
